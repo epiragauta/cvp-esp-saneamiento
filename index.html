@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Identificación de Predios CVP · Acueducto (EESSPP)</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="topbar">
+        <div class="brand">
+          <span class="brand-mark">CVP</span>
+          <div class="brand-text">
+            <h1>Identificación de Predios · Acueducto (EESSPP)</h1>
+            <p>Dirección de Reasentamientos · Caja de la Vivienda Popular</p>
+          </div>
+        </div>
+        <div id="stats" class="stats"></div>
+      </header>
+
+      <aside id="sidebar">
+        <!-- KPIs -->
+        <section class="kpis" id="kpis"></section>
+
+        <!-- Filtros -->
+        <section class="panel">
+          <h2>Filtros</h2>
+
+          <label class="fl">Propiedad</label>
+          <div class="segmented" id="seg-cvp">
+            <button data-v="all" class="on">Todos</button>
+            <button data-v="1">Solo CVP</button>
+            <button data-v="0">No identif.</button>
+          </div>
+
+          <label class="fl" for="f-localidad">Localidad</label>
+          <select id="f-localidad"><option value="__all__">Todas</option></select>
+
+          <label class="fl" for="f-upl">UPL</label>
+          <select id="f-upl"><option value="__all__">Todas</option></select>
+
+          <label class="fl" for="f-barrio">Barrio</label>
+          <select id="f-barrio"><option value="__all__">Todos</option></select>
+
+          <label class="fl" for="f-zona">Zona</label>
+          <select id="f-zona"><option value="__all__">Todas</option></select>
+
+          <label class="fl" for="f-estrato">Estrato</label>
+          <select id="f-estrato"><option value="__all__">Todos</option></select>
+
+          <label class="fl" for="f-buscar">Buscar (cuenta / dirección / CHIP)</label>
+          <input id="f-buscar" type="search" placeholder="Ej. 11291431 · KR 3A · AAA0158..." autocomplete="off" />
+
+          <button id="reset" type="button">Restablecer filtros</button>
+        </section>
+
+        <!-- Desglose -->
+        <section class="panel">
+          <h2>Cifras por territorio</h2>
+          <div class="tabs" id="tabs">
+            <button data-dim="Localidad" class="on">Localidad</button>
+            <button data-dim="UPL">UPL</button>
+            <button data-dim="Barrio">Barrio</button>
+            <button data-dim="Zona">Zona</button>
+          </div>
+          <div id="breakdown" class="breakdown"></div>
+        </section>
+
+        <p class="note">
+          Clic en una fila del desglose para filtrar. El marcador <b style="color:#be1e2d">rojo</b>
+          indica predio identificado como CVP; el <b style="color:#8a9099">gris</b>, no identificado.
+        </p>
+      </aside>
+
+      <main id="map" role="application" aria-label="Mapa de predios"></main>
+
+      <footer id="footer">
+        CVP · Dirección de Reasentamientos · Caja de la Vivienda Popular · Bogotá D.C. · 2026
+      </footer>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
